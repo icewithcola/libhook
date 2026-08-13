@@ -54,7 +54,7 @@ dependencies {
 dokka {
   dokkaPublications.html {
     moduleName.set("libhook")
-    outputDirectory.set(layout.projectDirectory.dir("docs"))
+    outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
   }
   // AGP registers Dokka's Android source sets after this block, so configure future variants too.
   // The publication task documents only the release variant.

@@ -4,6 +4,9 @@
 /build/
 **/build/
 
+# Dokka HTML is generated and deployed by GitHub Pages CI.
+/docs/
+
 # Android SDK location on an individual developer machine
 /local.properties
 
