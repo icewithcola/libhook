@@ -1,0 +1,15 @@
+[versions]
+agp = "9.0.0"
+xposed = "82"
+libxposed = "102.0.0"
+dokka = "2.2.0"
+junit = "4.13.2"
+
+[libraries]
+xposed-api = { group = "de.robv.android.xposed", name = "api", version.ref = "xposed" }
+libxposed-api = { group = "io.github.libxposed", name = "api", version.ref = "libxposed" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
