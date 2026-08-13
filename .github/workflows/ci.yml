@@ -4,11 +4,24 @@ on:
   pull_request:
   push:
     branches: [main]
+    tags: ["*"]
 
 permissions:
   contents: read
 
 jobs:
+  validate-release-tag:
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate release tag
+        env:
+          TAG: ${{ github.ref_name }}
+        run: python3 .github/scripts/validate-semver-tag.py "$TAG"
+
   verify:
     runs-on: ubuntu-latest
     steps:

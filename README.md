@@ -101,6 +101,9 @@ Pushing a `v*` tag, such as `v0.1.0`, publishes a signed bundle to Maven Central
 first release, verify the `uk.kagurach` namespace in the
 [Central Portal](https://central.sonatype.com/) and configure these repository secrets:
 
+Release tags must use `v` followed by SemVer 2.0.0 and be greater than every previous release
+tag. Invalid, repeated, or decreasing tags fail CI and are not published.
+
 - `MAVEN_CENTRAL_USERNAME` and `MAVEN_CENTRAL_PASSWORD` — Central Portal user-token credentials.
 - `SIGNING_KEY` — ASCII-armored PGP private key, including its header and footer.
 - `SIGNING_PASSWORD` — private-key passphrase.
